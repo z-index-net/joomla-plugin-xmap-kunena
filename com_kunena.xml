@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="plugin" group="xmap" method="upgrade">
-    <name>Xmap - Kunena Plugin</name>
+<extension version="3.0" type="plugin" group="xmap" method="upgrade">
+    <name>PLG_XMAP_COM_KUNENA</name>
     <author>Guillermo Vargas</author>
     <creationDate>September 2007</creationDate>
     <copyright>GNU GPL</copyright>
@@ -8,17 +8,21 @@
     <authorEmail>guille@vargas.co.cr</authorEmail>
     <authorUrl>joomla.vargas.co.cr</authorUrl>
     <version>@REVISION@</version>
-    <description>Xmap Plugin for Kunena component</description>
+    <description>PLG_XMAP_COM_KUNENA_DESC</description>
     <files>
         <filename plugin="com_kunena">com_kunena.php</filename>
     </files>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.plg_xmap_com_kunena.ini</language>
-        <language tag="es-ES">es-ES/es-ES.plg_xmap_com_kunena.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_xmap_com_kunena.sys.ini</language>
         <language tag="fa-IR">fa-IR/fa-IR.plg_xmap_com_kunena.ini</language>
+        <language tag="fa-IR">fa-IR/fa-IR.plg_xmap_com_kunena.sys.ini</language>
         <language tag="cs-CZ">cs-CZ/cs-CZ.plg_xmap_com_kunena.ini</language>
+        <language tag="cs-CZ">cs-CZ/cs-CZ.plg_xmap_com_kunena.sys.ini</language>
         <language tag="nl-NL">nl-NL/nl-NL.plg_xmap_com_kunena.ini</language>
+        <language tag="nl-NL">nl-NL/nl-NL.plg_xmap_com_kunena.sys.ini</language>
         <language tag="ru-RU">ru-RU/ru-RU.plg_xmap_com_kunena.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_xmap_com_kunena.sys.ini</language>
     </languages>
     <updateservers>
         <server type="collection" priority="1" name="z-index development">http://www.z-index.net/en/extensions.xml</server>
@@ -26,18 +30,18 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="include_topics" type="list" default="1" label="XMAP_KUNENA_SHOW_TOPICS_LABEL" description="XMAP_KUNENA_SHOW_TOPICS_DESC">
-                    <option value="0">XMAP_OPTION_NEVER</option>
-                    <option value="1">XMAP_OPTION_ALWAYS</option>
-                    <option value="2">XMAP_OPTION_XML_ONLY</option>
-                    <option value="3">XMAP_OPTION_HTML_ONLY</option>
+                <field name="include_topics" type="list" default="1" label="PLG_XMAP_COM_KUNENA_SHOW_TOPICS_LABEL" description="PLG_XMAP_COM_KUNENA_SHOW_TOPICS_DESC">
+                    <option value="0">PLG_XMAP_COM_KUNENA_OPTION_NEVER</option>
+                    <option value="1">PLG_XMAP_COM_KUNENA_OPTION_ALWAYS</option>
+                    <option value="2">PLG_XMAP_COM_KUNENA_OPTION_XML_ONLY</option>
+                    <option value="3">PLG_XMAP_COM_KUNENA_OPTION_HTML_ONLY</option>
                 </field>
-                <field name="max_topics" type="text" default="" label="XMAP_KUNENA_MAX_TOPICS_LABEL" description="XMAP_KUNENA_MAX_TOPICS_DESC" />
-                <field name="max_age" type="text" default="" label="XMAP_KUNENA_NEWEST_THAN_LABEL" description="XMAP_KUNENA_NEWEST_THAN_DESC" />
+                <field name="max_topics" type="text" default="" label="PLG_XMAP_COM_KUNENA_MAX_TOPICS_LABEL" description="PLG_XMAP_COM_KUNENA_MAX_TOPICS_DESC" />
+                <field name="max_age" type="text" default="" label="PLG_XMAP_COM_KUNENA_NEWEST_THAN_LABEL" description="PLG_XMAP_COM_KUNENA_NEWEST_THAN_DESC" />
             </fieldset>
-            <fieldset name="xml">
-                <field name="cat_priority" type="list" default="-1" label="XMAP_KUNENA_CATEGORY_PRIORITY_LABEL" description="XMAP_KUNENA_CATEGORY_PRIORITY_DESC">
-                    <option value="-1">XMAP_OPTION_USE_PARENT_MENU</option>
+            <fieldset name="xml" label="PLG_XMAP_COM_KUNENA_FIELDSET_XML_LABEL">
+                <field name="cat_priority" type="list" default="-1" label="PLG_XMAP_COM_KUNENA_CATEGORY_PRIORITY_LABEL" description="PLG_XMAP_COM_KUNENA_CATEGORY_PRIORITY_DESC">
+                    <option value="-1">PLG_XMAP_COM_KUNENA_OPTION_USE_PARENT_MENU</option>
                     <option value="0.0">0.0</option>
                     <option value="0.1">0.1</option>
                     <option value="0.2">0.2</option>
@@ -50,18 +54,18 @@
                     <option value="0.9">0.9</option>
                     <option value="1">1</option>
                 </field>
-                <field name="cat_changefreq" type="list" default="-1" label="XMAP_KUNENA_CATEGORY_CHANGEFREQ_LABEL" description="XMAP_KUNENA_CATEGORY_CHANGEFREQ_DESC">
-                    <option value="-1">XMAP_OPTION_USE_PARENT_MENU</option>
-                    <option value="always">XMAP_OPTION_ALWAYS</option>
-                    <option value="hourly">XMAP_OPTION_HOURLY</option>
-                    <option value="daily">XMAP_OPTION_DAILY</option>
-                    <option value="weekly">XMAP_OPTION_WEEKLY</option>
-                    <option value="monthly">XMAP_OPTION_MONTHLY</option>
-                    <option value="yearly">XMAP_OPTION_YEARLY</option>
-                    <option value="never">XMAP_OPTION_NEVER</option>
+                <field name="cat_changefreq" type="list" default="-1" label="PLG_XMAP_COM_KUNENA_CATEGORY_CHANGEFREQ_LABEL" description="PLG_XMAP_COM_KUNENA_CATEGORY_CHANGEFREQ_DESC">
+                    <option value="-1">PLG_XMAP_COM_KUNENA_OPTION_USE_PARENT_MENU</option>
+                    <option value="always">PLG_XMAP_COM_KUNENA_OPTION_ALWAYS</option>
+                    <option value="hourly">PLG_XMAP_COM_KUNENA_OPTION_HOURLY</option>
+                    <option value="daily">PLG_XMAP_COM_KUNENA_OPTION_DAILY</option>
+                    <option value="weekly">PLG_XMAP_COM_KUNENA_OPTION_WEEKLY</option>
+                    <option value="monthly">PLG_XMAP_COM_KUNENA_OPTION_MONTHLY</option>
+                    <option value="yearly">PLG_XMAP_COM_KUNENA_OPTION_YEARLY</option>
+                    <option value="never">PLG_XMAP_COM_KUNENA_OPTION_NEVER</option>
                 </field>
-                <field name="topic_priority" type="list" default="-1" label="XMAP_KUNENA_TOPIC_PRIORITY_LABEL" description="XMAP_KUNENA_TOPIC_PRIORITY_DESC">
-                    <option value="-1">XMAP_OPTION_USE_PARENT_MENU</option>
+                <field name="topic_priority" type="list" default="-1" label="PLG_XMAP_COM_KUNENA_TOPIC_PRIORITY_LABEL" description="PLG_XMAP_COM_KUNENA_TOPIC_PRIORITY_DESC">
+                    <option value="-1">PLG_XMAP_COM_KUNENA_OPTION_USE_PARENT_MENU</option>
                     <option value="0.0">0.0</option>
                     <option value="0.1">0.1</option>
                     <option value="0.2">0.2</option>
@@ -74,15 +78,15 @@
                     <option value="0.9">0.9</option>
                     <option value="1">1</option>
                 </field>
-                <field name="topic_changefreq" type="list" default="-1" label="XMAP_KUNENA_TOPIC_CHANGEFREQ_LABEL" description="XMAP_KUNENA_TOPIC_CHANGEFREQ_DESC">
-                    <option value="-1">XMAP_OPTION_USE_PARENT_MENU</option>
-                    <option value="always">XMAP_OPTION_ALWAYS</option>
-                    <option value="hourly">XMAP_OPTION_HOURLY</option>
-                    <option value="daily">XMAP_OPTION_DAILY</option>
-                    <option value="weekly">XMAP_OPTION_WEEKLY</option>
-                    <option value="monthly">XMAP_OPTION_MONTHLY</option>
-                    <option value="yearly">XMAP_OPTION_YEARLY</option>
-                    <option value="never">XMAP_OPTION_NEVER</option>
+                <field name="topic_changefreq" type="list" default="-1" label="PLG_XMAP_COM_KUNENA_TOPIC_CHANGEFREQ_LABEL" description="PLG_XMAP_COM_KUNENA_TOPIC_CHANGEFREQ_DESC">
+                    <option value="-1">PLG_XMAP_COM_KUNENA_OPTION_USE_PARENT_MENU</option>
+                    <option value="always">PLG_XMAP_COM_KUNENA_OPTION_ALWAYS</option>
+                    <option value="hourly">PLG_XMAP_COM_KUNENA_OPTION_HOURLY</option>
+                    <option value="daily">PLG_XMAP_COM_KUNENA_OPTION_DAILY</option>
+                    <option value="weekly">PLG_XMAP_COM_KUNENA_OPTION_WEEKLY</option>
+                    <option value="monthly">PLG_XMAP_COM_KUNENA_OPTION_MONTHLY</option>
+                    <option value="yearly">PLG_XMAP_COM_KUNENA_OPTION_YEARLY</option>
+                    <option value="never">PLG_XMAP_COM_KUNENA_OPTION_NEVER</option>
                 </field>
             </fieldset>
         </fields>
