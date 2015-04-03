@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.0" type="plugin" group="xmap" method="upgrade">
+<extension version="2.5" type="plugin" group="xmap" method="upgrade">
     <name>PLG_XMAP_COM_KUNENA</name>
     <author>Guillermo Vargas</author>
     <creationDate>September 2007</creationDate>
-    <copyright>GNU GPL</copyright>
-    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <copyright>(c) 2005 - 2009 Joomla! Vargas. All rights reserved; (c) 2015 Branko Wilhelm. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>guille@vargas.co.cr</authorEmail>
     <authorUrl>joomla.vargas.co.cr</authorUrl>
     <version>@REVISION@</version>
@@ -17,6 +17,8 @@
         <language tag="en-GB">en-GB/en-GB.plg_xmap_com_kunena.sys.ini</language>
         <language tag="fa-IR">fa-IR/fa-IR.plg_xmap_com_kunena.ini</language>
         <language tag="fa-IR">fa-IR/fa-IR.plg_xmap_com_kunena.sys.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.plg_xmap_com_kunena.ini</language>
+        <language tag="fr-FR">fr-FR/fr-FR.plg_xmap_com_kunena.sys.ini</language>
         <language tag="cs-CZ">cs-CZ/cs-CZ.plg_xmap_com_kunena.ini</language>
         <language tag="cs-CZ">cs-CZ/cs-CZ.plg_xmap_com_kunena.sys.ini</language>
         <language tag="nl-NL">nl-NL/nl-NL.plg_xmap_com_kunena.ini</language>
@@ -36,10 +38,14 @@
                     <option value="2">PLG_XMAP_COM_KUNENA_OPTION_XML_ONLY</option>
                     <option value="3">PLG_XMAP_COM_KUNENA_OPTION_HTML_ONLY</option>
                 </field>
-                <field name="max_topics" type="text" default="" label="PLG_XMAP_COM_KUNENA_MAX_TOPICS_LABEL" description="PLG_XMAP_COM_KUNENA_MAX_TOPICS_DESC" />
-                <field name="max_age" type="text" default="" label="PLG_XMAP_COM_KUNENA_NEWEST_THAN_LABEL" description="PLG_XMAP_COM_KUNENA_NEWEST_THAN_DESC" />
-            </fieldset>
-            <fieldset name="xml" label="PLG_XMAP_COM_KUNENA_FIELDSET_XML_LABEL">
+                <field name="include_pagination" type="list" default="0" label="PLG_XMAP_COM_KUNENA_INCLUDE_PAGINATION_LABEL" description="PLG_XMAP_COM_KUNENA_INCLUDE_PAGINATION_DESC">
+                    <option value="0">PLG_XMAP_COM_KUNENA_OPTION_NEVER</option>
+                    <option value="1">PLG_XMAP_COM_KUNENA_OPTION_ALWAYS</option>
+                    <option value="2">PLG_XMAP_COM_KUNENA_OPTION_XML_ONLY</option>
+                    <option value="3">PLG_XMAP_COM_KUNENA_OPTION_HTML_ONLY</option>
+                </field>
+                <field name="max_topics" type="text" default="0" filter="integer" label="PLG_XMAP_COM_KUNENA_MAX_TOPICS_LABEL" description="PLG_XMAP_COM_KUNENA_MAX_TOPICS_DESC" />
+                <field name="max_age" type="text" default="0" filter="integer" label="PLG_XMAP_COM_KUNENA_NEWEST_THAN_LABEL" description="PLG_XMAP_COM_KUNENA_NEWEST_THAN_DESC" />
                 <field name="cat_priority" type="list" default="-1" label="PLG_XMAP_COM_KUNENA_CATEGORY_PRIORITY_LABEL" description="PLG_XMAP_COM_KUNENA_CATEGORY_PRIORITY_DESC">
                     <option value="-1">PLG_XMAP_COM_KUNENA_OPTION_USE_PARENT_MENU</option>
                     <option value="0.0">0.0</option>
