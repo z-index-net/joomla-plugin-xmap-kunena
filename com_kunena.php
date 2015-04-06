@@ -49,30 +49,16 @@ class xmap_com_kunena
         $params['include_pagination'] = ($params['include_pagination'] == 1 || ($params['include_pagination'] == 2 && $xmap->view == 'xml') || ($params['include_pagination'] == 3 && $xmap->view == 'html'));
 
         $params['cat_priority'] = JArrayHelper::getValue($params, 'cat_priority', $parent->priority);
+        $params['cat_priority'] = ($params['cat_priority'] == -1) ? $parent->priority : $params['cat_priority'];
+
         $params['cat_changefreq'] = JArrayHelper::getValue($params, 'cat_changefreq', $parent->changefreq);
-
-        if ($params['cat_priority'] == -1)
-        {
-            $params['cat_priority'] = $parent->priority;
-        }
-
-        if ($params['cat_changefreq'] == -1)
-        {
-            $params['cat_changefreq'] = $parent->changefreq;
-        }
+        $params['cat_changefreq'] = ($params['cat_changefreq'] == -1) ? $parent->changefreq : $params['cat_changefreq'];
 
         $params['topic_priority'] = JArrayHelper::getValue($params, 'topic_priority', $parent->changefreq);
+        $params['topic_priority'] = ($params['topic_priority'] == -1) ? $parent->priority : $params['topic_priority'];
+
         $params['topic_changefreq'] = JArrayHelper::getValue($params, 'topic_changefreq', $parent->changefreq);
-
-        if ($params['topic_priority'] == -1)
-        {
-            $params['topic_priority'] = $parent->priority;
-        }
-
-        if ($params['topic_changefreq'] == -1)
-        {
-            $params['topic_changefreq'] = $parent->changefreq;
-        }
+        $params['topic_changefreq'] = ($params['topic_changefreq'] == -1) ? $parent->changefreq : $params['topic_changefreq'];
 
         if ($params['include_topics'])
         {
