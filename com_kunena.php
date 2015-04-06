@@ -53,7 +53,7 @@ class xmap_com_kunena
 
         if ($params['cat_priority'] == -1)
         {
-            $params['cat_changefreq'] = $parent->priority;
+            $params['cat_priority'] = $parent->priority;
         }
 
         if ($params['cat_changefreq'] == -1)
@@ -111,14 +111,14 @@ class xmap_com_kunena
 
         foreach ($categories as $cat)
         {
-            $node = new stdclass;
+            $node = new stdClass;
             $node->id = $parent->id;
             $node->browserNav = $parent->browserNav;
             $node->uid = $parent->uid . '_c_' . $cat->id;
             $node->name = $cat->name;
             $node->priority = $params['cat_priority'];
             $node->changefreq = $params['cat_changefreq'];
-            $node->link = $cat->getUrl();
+            $node->link = 'index.php?option=com_kunena&view=category&catid=' . $cat->id . '&Itemid=' . $parent->id;
             $node->secure = $parent->secure;
 
             if ($xmap->printNode($node))
@@ -158,7 +158,7 @@ class xmap_com_kunena
 
         foreach ($topics as $topic)
         {
-            $node = new stdclass;
+            $node = new stdClass;
             $node->id = $parent->id;
             $node->browserNav = $parent->browserNav;
             $node->uid = $parent->uid . '_t_' . $topic->id;
@@ -180,7 +180,7 @@ class xmap_com_kunena
 
                     for ($i = 2; $i <= $threadPages; $i++)
                     {
-                        $subnode = new stdclass;
+                        $subnode = new stdClass;
                         $subnode->id = $node->id;
                         $subnode->uid = $node->uid . '_p_' . $i;
                         $subnode->name = '[' . $i . ']';
