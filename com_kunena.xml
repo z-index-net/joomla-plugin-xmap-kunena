@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="plugin" group="xmap" method="upgrade">
+<extension version="3.0" type="plugin" group="xmap" method="upgrade">
     <name>PLG_XMAP_COM_KUNENA</name>
     <author>Guillermo Vargas</author>
     <creationDate>September 2007</creationDate>
